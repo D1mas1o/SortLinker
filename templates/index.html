@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Обработка данных форм</title>
+</head>
+<body>
+    <form method="post" action="">
+        <p>
+        <input required type="text" placeholder="Введите URL" name="user_url" name="LinkMode">
+        <input type="submit">
+        <br>
+        {% if short_url %}
+        <input type="text" size="50" placeholder="Короткая ссылка" name="user_url" value={{short_url}} >
+         {% else %}
+        <input type="text" size="50" readonly placeholder="Короткая ссылка" name="user_url" >
+        {% endif %}
+        <br>
+        <input required type="radio" id="Mode1" name="LinkMode" value="3">
+        <label for="Mode1">Приватная ссылка</label>
+        <br>
+        <input required type="radio" id="Mode2" name="LinkMode" value="2">
+        <label for="Mode2">Ссылка общего доступа</label>
+        <br>
+        <input required type="radio" id="Mode3" name="LinkMode" value="1">
+        <label for="Mode3">Публичная ссылка</label>
+        <br>
+        {% if answer %}
+        {{answer}}
+        {% endif %}
+        </p>
+
+    </form>
+
+</body>
+</html>
